@@ -15,13 +15,13 @@
 	@return ($target / $vw-context) * 1vw;
 }
 
-@function get-vw-base($target) {
-	$vw-context: (1170 * 0.01);
+@function get-vw-1180($target) {
+	$vw-context: (1180 * 0.01);
 	@return ($target / $vw-context) * 1vw;
 }
 
-@function get-vw-375($target) {
-	$vw-context: (375 * 0.01);
+@function get-vw-1024($target) {
+	$vw-context: (1024 * 0.01);
 	@return ($target / $vw-context) * 1vw;
 }
 

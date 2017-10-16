@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "gulp-batch": "^1.0.5",
+    "gulp-critical-css": "^1.0.1",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.3.0",
     "gulp-uglify": "^3.0.0",
     "gulp-w3cjs": "^1.3.0",

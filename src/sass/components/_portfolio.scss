@@ -2,8 +2,6 @@
 	@extend %flex;
 	@extend %rel;
 	flex-wrap: wrap;
-	
-	
 
 	&__item {
 		will-change: opacity;
@@ -13,6 +11,17 @@
 		height: 0;
 		overflow: hidden;
 		background-color: black;
+		//border-bottom: 1px solid black;
+		
+		& + & {
+			&:after {
+				@extend %abs-after;
+				left: 0; top: 0;
+				width: 100%; height: 1px;
+				background-color: black;
+			}
+			border-bottom: none !important;
+		}
 		
 		img {
 			@extend %anim;
@@ -29,6 +38,8 @@
 		
 		&--narrow {
 			padding-bottom: 120%;
+			
+			border-bottom: none !important;
 		}
 		
 		&--small {
@@ -36,17 +47,20 @@
 		}
 		
 		&:hover {
-			.desktop & {
-				img {
-					filter: blur(2px);
-					opacity: .3;
-				}
-				
-				.c-portfolio__details {
-					opacity: 1;
+			@media screen and ( min-width: $tablet + 1px ) {
+		
+				.desktop & {
+					img {
+						filter: blur(2px);
+						opacity: .3;
+					}
 					
-					p {
-						transform: translateY(0);
+					.c-portfolio__details {
+						opacity: 1;
+						
+						p {
+							transform: translateY(0);
+						}
 					}
 				}
 			}
@@ -56,6 +70,10 @@
 	&__box {
 		width: 25%;
 		overflow: hidden;
+		
+		&:not(:first-of-type) {
+			padding-left: 1px;
+		}
 		
 		@media screen and ( max-width: $tablet_portrait + px ) {
 			width: 50%;
@@ -89,18 +107,28 @@
 		align-items: center;
 		opacity: 0;
 		
+		@media screen and ( max-width: 1180px ) {
+			left: 20px; top: 20px;
+			width: calc(100% - 40px);
+			height: calc(100% - 40px);
+		}
+
 		p {
 			@extend %anim;
 			transform: translateY(10px);
 		}
 		
-		.icon-laptop,
 		.icon-code {
 			padding: 0 10px;
 			font-size: rem(48);
 			
 			.c-portfolio__item--small & {
 				font-size: rem(30);
+				
+				@media screen and ( max-width: 1180px ) {
+					font-size: get-vw-1180(30);
+				}
+				
 			}
 		}
 		
@@ -115,16 +143,36 @@
 		@extend %font-serif;
 		font-size: rem(42);
 		
+		.c-portfolio__item--narrow & {
+			@media screen and ( max-width: 1180px ) {
+				font-size: get-vw-1180(42);
+			}
+		}
+		
 		.c-portfolio__item--small & {
 			font-size: rem(30);
+			
+			@media screen and ( max-width: 1180px ) {
+				font-size: get-vw-1180(30);
+			}
 		}
 	}
 	
 	&__subtitle {
-		margin-bottom: 1rem;
+		margin-bottom: 10px;
+		
+		.c-portfolio__item--narrow & {
+			@media screen and ( max-width: 1180px ) {
+				font-size: get-vw-1180(18);
+			}
+		}
 		
 		.c-portfolio__item--small & {
 			font-size: rem(16);
+			
+			@media screen and ( max-width: 1180px ) {
+				margin-bottom: get-vw-1180(10);
+			}
 		}
 	}
 }

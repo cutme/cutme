@@ -8,7 +8,7 @@
 	}
 	
 	.swiper-wrapper {
-		@media screen and ( min-width: $base + 1px ) {
+		@media screen and ( min-width: 1181px ) {
 			padding: 0 calc( (100% - 990px) / 2) ;
 		}
 		
@@ -41,7 +41,7 @@
 	
 	h3 {
 		span {
-			@media screen and ( max-width: $smartphone_portrait + px ) {
+			@media screen and ( max-width: $tablet + px ) {
 				display: block;
 			}
 		}
@@ -57,7 +57,11 @@
 			font-size: rem(30);
 		}
 		
-		@media screen and ( max-width: $smartphone_portrait + px ) {
+		@media screen and ( max-width: $tablet + px ) {
+			top: -2rem;
+		}
+		
+		@media screen and ( max-width: $tablet_portrait + px ) {
 			top: -1.7rem;
 		}
 	}

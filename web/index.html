@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en-US">
 
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -23,7 +23,7 @@
 	<title>Front-end and Wordpress development &ndash; cutme&reg;</title>	
 
 	<script src="js/pace.min.js"></script>
-	<link href="css/libs.css" rel="stylesheet">
+	
 	
 	<script>
 	
@@ -48,7 +48,7 @@
 			window.addEventListener( 'resize', action );
 		};
 	
-		var loadCSS = function loadCSS() {
+		var loadMyCSS = function() {
 			var style = document.createElement('style'),
 				url = "css/style.css",
 			    head = document.getElementsByTagName('head')[0],
@@ -69,7 +69,7 @@
 		}
 	
 		Pace.on('start', function() {
-			loadCSS();
+			loadMyCSS();
 		});
 		
 		Pace.on('done', function() {
@@ -297,7 +297,7 @@ Let’s exchange ideas to see if we are a good fit for each other.
 									
 									<p>
 										I'm thrilled to hear from you.<br> 
-										My inbox can’t wait to get your message,<br> 
+										My inbox can&#039;t wait to get your message,<br> 
 										so write to me any time you like.
 									</p>
 									
@@ -477,6 +477,14 @@ Let’s exchange ideas to see if we are a good fit for each other.
 	
 	<script src="js/libs.js"></script>
 	<script src="js/script.js"></script>
+	
+	<script>
+		loadCSS('/css/libs.css', false, 'screen');
+		
+		if(navigator.userAgent.indexOf("Speed Insights") == -1) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-609018-20','auto');ga('send','pageview');
+		}
+	</script>
 
 
 </body>

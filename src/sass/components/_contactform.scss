@@ -1,6 +1,10 @@
 .c-contactform {
 	margin-top: -40px;
 	
+	@media screen and ( min-width: $base + 1px ) {
+		width: 440px;
+	}
+	
 	&__message {
 		@extend %anim;
 		padding-top: 20px;
@@ -26,7 +30,6 @@
 	
 	@media screen and ( max-width: $tablet_portrait + px ) {
 		padding: 0 0 50px 0;
-		text-align: center;
 	}
 
 	.content {
@@ -60,9 +63,12 @@
 	
 	&__thanks {
 		@extend %anim;
-		margin-top: -50px;
 		padding-top: 0;
 		opacity: 0;
+		
+		@media screen and ( min-width: $base + 1px ) {
+			margin-top: -50px;
+		}
 		
 		&.is-visible {
 			animation: fadeIn 500ms forwards ease-out;
@@ -74,7 +80,7 @@
 		}
 		
 		p {
-			line-height: 1.2;
+			line-height: 1.3;
 			font-family: $sans;
 			margin-bottom: 1.5rem;
 			font-size: rem(20);

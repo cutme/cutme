@@ -21,7 +21,7 @@ var gulp         = require('gulp'),
     w3cjs = require('gulp-w3cjs'),
     merge        = require('merge-stream'),
     spritesmith  = require('gulp.spritesmith'),
-    batch = require('gulp-batch');
+    batch        = require('gulp-batch');
 
 
 var config = {
@@ -90,6 +90,8 @@ gulp.task('sass', function() {
 
 });
 
+
+
 gulp.task('img', function () {
     return gulp.src('src/img/**/*')
         .pipe(newer('web/img'))
@@ -146,7 +148,6 @@ gulp.task('w3cjs', function () {
         .pipe(w3cjs.reporter());
 });
 
-
 gulp.task('browser-sync', function() {  
     browserSync.init(["css/*.css", "js/*.js"], {
         server: {
@@ -154,7 +155,6 @@ gulp.task('browser-sync', function() {
         }
     });
 });
-
 
 gulp.task('default', ['sass', 'browser-sync'], function () {  
     watch("src/sass/**/*.scss", batch(function (events, done) {

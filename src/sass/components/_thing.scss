@@ -3,13 +3,13 @@
 	
 	h3 {
 		@extend %font-serif;
-		margin-bottom: 10px;
+		padding-bottom: 10px;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 
 		@media screen and ( min-width: $tablet_portrait + 1px ) {
-			margin-bottom: 20px;
+			padding-bottom: 20px;
 		}
 	}
 	

@@ -21,7 +21,7 @@
 	<title>Front-end and Wordpress development &ndash; cutme&reg;</title>	
 
 	<script src="js/pace.min.js"></script>
-	<link href="css/libs.css" rel="stylesheet">
+	
 	
 	<script>
 	
@@ -46,7 +46,7 @@
 			window.addEventListener( 'resize', action );
 		};
 	
-		var loadCSS = function loadCSS() {
+		var loadMyCSS = function() {
 			var style = document.createElement('style'),
 				url = "css/style.css",
 			    head = document.getElementsByTagName('head')[0],
@@ -67,7 +67,7 @@
 		}
 	
 		Pace.on('start', function() {
-			loadCSS();
+			loadMyCSS();
 		});
 		
 		Pace.on('done', function() {

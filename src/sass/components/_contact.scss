@@ -19,13 +19,6 @@
 		}
 	}
 
-	&__form {
-	
-		@media screen and ( min-width: $base + 1px ) {
-			width: 440px;
-		}		
-	}
-
 	&__social {
 		
 		@media screen and ( max-width: $base + px ) {
