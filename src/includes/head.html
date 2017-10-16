@@ -1,0 +1,90 @@
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	
+	<meta name="GOOGLEBOT" content="NOODP" /> 
+	<meta name="description" content="Quality code that brings your ideas to market. Responsive HTML5/CSS3/JS websites witch a fresh perspective since 2005." />
+	<meta name="author" content="mediger.net" />
+	<meta name="google-site-verification" content="0U4b6LMrfwX4b420rcmIc5FN-AYJ1sgRojnBXOwI208" />
+	<meta name="application-name" content="cutme"/>
+	
+	<meta property="og:site_name" content="cutme.pl" />
+	<meta property="og:title" content="Front-end development – cutme.pl" />
+	<meta property="og:type" content="company" />
+	<meta property="og:url" content="http://cutme.pl/" />
+	<meta property="og:description" content="Front-end and Wordpress development." />
+	
+	
+	<title>Front-end and Wordpress development &ndash; cutme&reg;</title>	
+
+	<script src="js/pace.min.js"></script>
+	<link href="css/libs.css" rel="stylesheet">
+	
+	<script>
+	
+		document.documentElement.style.display = 'none';
+		
+	
+		var setHeights = function setHeights() {
+			var fullHeight = document.getElementsByClassName('js-fullHeight');
+	
+			var action = function() {
+				var windowHeight = window.innerHeight + 'px';
+	
+				if (fullHeight) {
+					for (var i = 0; i < fullHeight.length; i++) {
+						fullHeight[i].style.minHeight = windowHeight;
+					}
+				}
+			}
+			
+			action();
+			
+			window.addEventListener( 'resize', action );
+		};
+	
+		var loadCSS = function loadCSS() {
+			var style = document.createElement('style'),
+				url = "css/style.css",
+			    head = document.getElementsByTagName('head')[0],
+			    link = document.createElement('link');
+			
+			link.type = "text/css"; 
+			link.rel = "stylesheet";
+			link.href = url;
+	
+			head.appendChild(link);
+	
+			link.onload = function () {
+				document.documentElement.removeAttribute('style');
+				setTimeout(function() {
+					setHeights();
+				}, 10);
+			};
+		}
+	
+		Pace.on('start', function() {
+			loadCSS();
+		});
+		
+		Pace.on('done', function() {
+			classie.remove( document.getElementsByTagName('body')[0], 'no-overflow' );
+			ctme.Helper.blazy();
+			ctme.Helper.isMobile();
+			ctme.Carousel.init();
+		});
+	
+	</script>
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=YAoavOrrA6">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=YAoavOrrA6">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=YAoavOrrA6">
+	<link rel="manifest" href="/manifest.json?v=YAoavOrrA6">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg?v=YAoavOrrA6" color="#5bbad5">
+	<link rel="shortcut icon" href="/favicon.ico?v=YAoavOrrA6">
+	<meta name="theme-color" content="#ffffff">
+</head>

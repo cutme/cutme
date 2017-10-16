@@ -1,0 +1,13 @@
+
+.u-bg {
+	background-size: cover;
+
+	&--bright {
+		background-image: url(../img/bg/bright.jpg);
+	}
+
+	&--dark {
+		background-image: url(../img/bg/dark.jpg);
+	}
+}
+

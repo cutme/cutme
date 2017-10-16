@@ -1,0 +1,125 @@
+.c-welcome {
+	@extend %flex;
+	@extend %rel;
+	align-items: center;
+	overflow: hidden;	
+	
+	@media screen and ( max-width: $smartphone + px ) {
+		padding: {
+			top: 80px;
+			bottom: 80px;
+		}
+	}
+
+	.pace-done & {
+		transition-delay: 2s;
+	}
+	
+	&__cube {
+		@extend %abs;
+		@extend %anim--medium;
+		z-index: 1;
+
+		top: 20%;
+		z-index: 1;
+		right: 0;
+		transform: translateX(100%);
+		flex: 0;
+		width: 400px;
+		height: 640px;
+		opacity: 0;
+		will-change: transform, opacity;
+		
+		@media screen and ( min-width: $base + 1px ) {
+			right: calc( (100% - 990px) / 2 );
+		}
+
+		@media screen and ( min-width: $base + 1px ) and ( max-width: 1180px ) {
+			width: grid(400, 1180);
+		}
+
+		&:after {
+			@extend %abs-after;
+			left: 50%; top: 0;
+			z-index: -1;
+			transform: translateX(-50%);
+			width: 850px;
+			height: 640px;
+			background: {
+				image: url(../img/assets/cube-shadow.png);
+				repeat: no-repeat;
+			}
+
+			@media screen and ( max-width: 1180px ) {
+				width: grid(850, 400);
+			}
+		}
+
+		&.is-loaded {
+			.pace-done & {
+				transition-delay: 300ms;
+				transform: translateX(0);
+				opacity: 1;
+				
+				@media screen and ( max-width: $base + px ) {
+					filter: grayscale(100%);
+					opacity: .1;
+				}
+			}
+		}
+	}
+
+	article {
+		width: 560px;
+		margin-bottom: 3rem;
+
+		@media screen and ( min-width: $base + 1px ) and ( max-width: 1180px ) {
+			width: grid(560, 1180 - 95 - 95);
+		}
+		
+		@media screen and ( max-width: $tablet_portrait + px ) {
+			width: 100%;
+		}
+	}
+	
+	br {
+		@media screen and ( max-width: $smartphone + px ) {
+			display: none;
+		}
+	}
+
+	h1, h3 {
+		@extend %font-serif;
+		line-height: 1.2;
+		font: {
+			weight: $regular;
+		}
+	}
+
+	h3 {
+		margin-bottom: 10px;
+		font-size: rem(52);
+		
+		@media screen and ( min-width: $smartphone + px ) {
+			font-size: rem(60);
+		}
+	}
+	
+	h1 {
+		
+		font-size: rem(24);
+		
+		@media screen and ( min-width: $smartphone + px ) {
+			font-size: rem(20);
+		}
+	}
+	
+	header {
+		margin-bottom: 2rem;;
+	}
+	
+	p {
+		margin-bottom: 1.5rem;
+		line-height: 1.5;
+	}
+}

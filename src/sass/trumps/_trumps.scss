@@ -1,0 +1,42 @@
+[class^="icon-"], [class*=" icon-"] {
+	@extend %icomoon;
+}
+
+.anim {
+	@extend %anim;
+	will-change: transform, opacity;
+	
+	&--up {
+		opacity: 0;
+		transform: translateY(50px);
+		
+		&.anim--loaded {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	
+	&--see {
+		opacity: 0;
+		transform: translateY(50px);
+		
+		&.anim--loaded {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+
+.no-overflow {
+	overflow: hidden;
+}
+
+.u-spacebetween {
+	@extend %flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.u-relative {
+	@extend %rel;
+}

@@ -1,0 +1,22 @@
+.o-wrap {
+	@extend %rel;
+	margin: 0 auto;
+	width: $base + px;
+	margin: 0 auto;	
+	
+	@media screen and ( max-width: 1180px ) {
+		width: 100%;
+		padding: {
+			left: 95px;
+			right: 95px;
+		}
+	}
+	
+	@media screen and ( max-width: $smartphone + px ) {
+		padding: {
+			left: 30px;
+			right: 30px;
+		}
+	}
+	
+}

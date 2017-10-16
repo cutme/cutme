@@ -1,0 +1,26 @@
+.o-header {
+	h3 {
+		line-height: 1.1;
+		font-size: rem(42);
+		
+		span {
+			font-size: rem(28);
+		}
+		
+		@media screen and ( min-width: $tablet_portrait + 1px ) {
+			font-size: rem(72);
+			
+			span {
+				font-size: rem(48);
+			}
+		}
+		
+		@media screen and ( min-width: $smartphone + 1px ) and ( max-width: $tablet_portrait + px ) {
+			font-size: rem(52);
+		
+			span {
+				font-size: rem(38);
+			}
+		}
+	}
+}

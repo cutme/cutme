@@ -1,0 +1,130 @@
+.c-portfolio {
+	@extend %flex;
+	@extend %rel;
+	flex-wrap: wrap;
+	
+	
+
+	&__item {
+		will-change: opacity;
+		@extend %anim;
+		@extend %rel;
+		display: block;
+		height: 0;
+		overflow: hidden;
+		background-color: black;
+		
+		img {
+			@extend %anim;
+			@extend %abs;
+			top: -2%; left: -2%;
+			width: 104%;
+			height: auto;
+			max-width: none;
+		}
+		
+		&--big {
+			padding-bottom: 60%;
+		}
+		
+		&--narrow {
+			padding-bottom: 120%;
+		}
+		
+		&--small {
+			padding-bottom: 60%;
+		}
+		
+		&:hover {
+			.desktop & {
+				img {
+					filter: blur(2px);
+					opacity: .3;
+				}
+				
+				.c-portfolio__details {
+					opacity: 1;
+					
+					p {
+						transform: translateY(0);
+					}
+				}
+			}
+		}
+	}
+	
+	&__box {
+		width: 25%;
+		overflow: hidden;
+		
+		@media screen and ( max-width: $tablet_portrait + px ) {
+			width: 50%;
+		}
+
+		&--big {
+			width: 50%;
+			
+			@media screen and ( max-width: $tablet_portrait + px ) {
+				width: 100%;
+			}
+		}
+		
+		img {
+			//width: 100%;
+		}
+	}
+	
+	&__details {
+		@extend %anim;
+		@extend %abs;
+		@extend %flex;
+		z-index: 1;
+		left: 25px; top: 25px;
+		width: calc(100% - 50px);
+		height: calc(100% - 50px);
+		border: 1px solid rgba(white, .6);
+		color: white;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		opacity: 0;
+		
+		p {
+			@extend %anim;
+			transform: translateY(10px);
+		}
+		
+		.icon-laptop,
+		.icon-code {
+			padding: 0 10px;
+			font-size: rem(48);
+			
+			.c-portfolio__item--small & {
+				font-size: rem(30);
+			}
+		}
+		
+		a {
+			&:hover {
+				color: $c-red-1;
+			}
+		}
+	}
+	
+	&__title {
+		@extend %font-serif;
+		font-size: rem(42);
+		
+		.c-portfolio__item--small & {
+			font-size: rem(30);
+		}
+	}
+	
+	&__subtitle {
+		margin-bottom: 1rem;
+		
+		.c-portfolio__item--small & {
+			font-size: rem(16);
+		}
+	}
+}

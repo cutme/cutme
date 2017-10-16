@@ -1,0 +1,8 @@
+.o-container {
+	@extend %anim;
+	opacity: 0;
+
+	.pace-done & {
+		opacity: 1;
+	}
+}

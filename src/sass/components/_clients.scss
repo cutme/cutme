@@ -1,0 +1,23 @@
+.c-clients {
+	@extend %flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	
+	opacity: .5;
+	
+	@media screen and ( min-width: $base + 1px ) {
+		padding: 0 calc( (100% - 990px) / 2) ;
+	}
+
+	&__item {
+		width: 33%;
+		
+		@media screen and ( min-width: $smartphone + 1px ) {
+			width: 20%;
+		}
+		
+		@media screen and ( max-width: $smartphone_portrait + px ) {
+			width: 50%;
+		}
+	}
+}

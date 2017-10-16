@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	
+	<meta name="GOOGLEBOT" content="NOODP" /> 
+	<meta name="description" content="Quality code that brings your ideas to market. Responsive HTML5/CSS3/JS websites witch a fresh perspective since 2005." />
+	<meta name="author" content="mediger.net" />
+	<meta name="google-site-verification" content="0U4b6LMrfwX4b420rcmIc5FN-AYJ1sgRojnBXOwI208" />
+	<meta name="application-name" content="cutme"/>
+	
+	<meta property="og:site_name" content="cutme.pl" />
+	<meta property="og:title" content="Front-end development – cutme.pl" />
+	<meta property="og:type" content="company" />
+	<meta property="og:url" content="http://cutme.pl/" />
+	<meta property="og:description" content="Front-end and Wordpress development." />
+	
+	
+	<title>Front-end and Wordpress development &ndash; cutme&reg;</title>	
+
+	<script src="js/pace.min.js"></script>
+	<link href="css/libs.css" rel="stylesheet">
+	
+	<script>
+	
+		document.documentElement.style.display = 'none';
+		
+	
+		var setHeights = function setHeights() {
+			var fullHeight = document.getElementsByClassName('js-fullHeight');
+	
+			var action = function() {
+				var windowHeight = window.innerHeight + 'px';
+	
+				if (fullHeight) {
+					for (var i = 0; i < fullHeight.length; i++) {
+						fullHeight[i].style.minHeight = windowHeight;
+					}
+				}
+			}
+			
+			action();
+			
+			window.addEventListener( 'resize', action );
+		};
+	
+		var loadCSS = function loadCSS() {
+			var style = document.createElement('style'),
+				url = "css/style.css",
+			    head = document.getElementsByTagName('head')[0],
+			    link = document.createElement('link');
+			
+			link.type = "text/css"; 
+			link.rel = "stylesheet";
+			link.href = url;
+	
+			head.appendChild(link);
+	
+			link.onload = function () {
+				document.documentElement.removeAttribute('style');
+				setTimeout(function() {
+					setHeights();
+				}, 10);
+			};
+		}
+	
+		Pace.on('start', function() {
+			loadCSS();
+		});
+		
+		Pace.on('done', function() {
+			classie.remove( document.getElementsByTagName('body')[0], 'no-overflow' );
+			ctme.Helper.blazy();
+			ctme.Helper.isMobile();
+			ctme.Carousel.init();
+		});
+	
+	</script>
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=YAoavOrrA6">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=YAoavOrrA6">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=YAoavOrrA6">
+	<link rel="manifest" href="/manifest.json?v=YAoavOrrA6">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg?v=YAoavOrrA6" color="#5bbad5">
+	<link rel="shortcut icon" href="/favicon.ico?v=YAoavOrrA6">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="no-overflow " >
+
+	<div class="o-container">
+		
+
+
+		<div class="c-welcome u-bg u-bg--bright js-fullHeight js-fadeOut">
+			<div class="c-logo">
+				<a href="#" class="c-logo__img c-logo__img--black js-goto"></a>
+			</div>
+			
+			<div class="o-wrap">
+				<article>
+					<header>
+						<h3>Say hello</h3>
+						<h1>the professional front-end development.</h1>
+					</header>
+					
+					<p>
+						I'm Bartosz Mediger, the founder of cutme.pl, <br>
+						I create quality code that brings your ideas to market.
+					</p>
+
+					<p>
+						I develop responsive websites witch a fresh perspective,<br>
+						looks beautiful on all devices.
+					</p>
+
+					<p>
+						With over a 12 years of experience as a designer & developer, <br>
+						I can integrate seemlessly with your current team or be partner <br>
+						with you to build the web-focused product you need. 
+					</p>
+
+					<p>
+Let’s exchange ideas to see if we are a good fit for each other.
+					</p>					
+				</article>
+				
+				<a href="#portfolio" class="o-btn o-btn--bright js-goto js-btn">Show portfolio</a>				
+			</div>
+			
+			<div class="c-welcome__cube">
+				<img 
+					src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+					data-src="img/assets/cube.png" alt="cube" width="850" height="640"
+					class="b-lazy">
+			</div>
+		</div>
+
+	
+		<div class="c-portfolio" id="portfolio">			
+			<div class="c-portfolio__box c-portfolio__box--big">
+				<a href="//github.com/cutme/polentex" class="c-portfolio__item c-portfolio__item--big" target="_blank">
+					<div class="c-portfolio__details">
+						<p class="c-portfolio__title">Polentex</p>
+						<p class="c-portfolio__subtitle">HTML5, CSS3, JS, Wordpress</p>
+						
+						<p class="c-portfolio__links">
+							<i class="icon-code"></i>
+						</p>
+					</div>
+					<img 
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+						width="800" height="480" data-src="img/portfolio/pol.jpg|img/portfolio/pol@2x.jpg" alt="" 
+						class="b-lazy">
+				</a>
+			</div>
+			
+			<div class="c-portfolio__box">
+				<a href="//github.com/cutme/malak" class="c-portfolio__item c-portfolio__item--narrow" target="_blank">
+					<div class="c-portfolio__details">
+						<p class="c-portfolio__title">Malak</p>
+						<p class="c-portfolio__subtitle">HTML5, CSS3, JS, Wordpress</p>
+						
+						<p class="c-portfolio__links">
+							<i class="icon-code"></i>
+						</p>
+					</div>
+					
+					<img 
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+						width="400" height="480" data-src="img/portfolio/flo.jpg|img/portfolio/flo@2x.jpg" alt=""
+						class="b-lazy">
+				</a>
+			</div>
+
+			<div class="c-portfolio__box">
+				<a href="//github.com/cutme/storyfactory" class="c-portfolio__item c-portfolio__item--small" target="_blank">
+					<div class="c-portfolio__details">
+						<p class="c-portfolio__title">StoryFactory</p>
+						<p class="c-portfolio__subtitle">HTML5, CSS3, JS</p>
+						
+						<p class="c-portfolio__links">
+							<i class="icon-code"></i>
+						</p>
+					</div>
+					<img 
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+						width="400" height="240" data-src="img/portfolio/sto.jpg|img/portfolio/sto@2x.jpg" alt=""
+						class="b-lazy small">
+				</a>
+			
+				<a href="//github.com/cutme/traffictrends" class="c-portfolio__item c-portfolio__item--small" target="_blank">
+					<div class="c-portfolio__details">
+						<p class="c-portfolio__title">TrafficTrends</p>
+						<p class="c-portfolio__subtitle">HTML5, CSS3, JS</p>
+						
+						<p class="c-portfolio__links">
+							<i class="icon-code"></i>
+						</p>
+					</div>
+					<img 
+						src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+						width="400" height="240" data-src="img/portfolio/tra.jpg|img/portfolio/tra@2x.jpg" alt=""
+						class="b-lazy">
+				</a>
+			</div>			
+		</div>
+		
+		
+		<div class="c-contact u-bg u-bg--dark u-relative" id="contact">
+			<div class="c-logo">
+				<a href="#" class="c-logo__img c-logo__img--white js-goto"></a>
+			</div>
+			
+			<div class="o-wrap o-section">				
+				<header class="o-header">
+					<h3><span>Are you</span> ready</h3>
+					<h2>To realize your project?</h2>
+				</header>
+
+
+				<div class="c-contact__content">
+					
+					<ul class="c-contact__social">
+						<li><i class="icon-envelope-o"></i><a href="mailto:info@cutme.pl">info@cutme.pl</a></li>
+						<li><i class="icon-twitter"></i><a href="//twitter.com/bartoszmediger">@bartoszmediger</a></li>
+						<li><i class="icon-device-mobile"></i><a href="tel:691630013">+45(0) 691 630 013</a></li>
+					</ul>
+					
+					<div class="c-contactform">
+						<div class="content">
+	
+							<form action="contact.php" method="post" id="contactForm" novalidate>
+								<fieldset id="formFields">
+							
+									<span class="input">
+										<input 
+											class="input__field" 
+											type="email" 
+											id="input-1" 
+											name="email" 
+											autocomplete="off" />
+										
+										<label class="input__label" for="input-1">
+											<span class="input__label-content">Your e-mail address</span>
+											<span class="messages"></span>
+										</label>
+									
+										<svg 
+											class="graphic" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+		 
+											<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+										</svg>
+										
+										
+									</span>
+								
+									<span class="input">
+										<textarea rows="1" 
+											class="input__field input__field--textarea" 
+											id="input-2" 
+											name="message" 
+											autocomplete="off"></textarea>
+											
+										<label class="input__label" for="input-2">
+											<span class="input__label-content">Write something nice..</span>
+										</label>
+									
+										<svg 
+											class="graphic" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">			
+		 
+											<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+										</svg>
+									</span>
+								
+									<div class="c-contactform__message js-errormessage">* Podaj swój numer telefonu lub adres e-mail</div>
+								
+									<div class="c-contactform__submit">
+										<div class="c-contactform__spinner js-spinner is-hidden">
+											<img src="img/assets/spinner.svg" alt="" width="12" height="12">
+										</div>
+
+										<div class="c-contactform__spinner is-hidden" id="spinner">
+											<img src="img/assets/spinner.svg" width="60" height="60" alt="spinner">
+										</div>
+										<button type="submit" class="o-btn o-btn--outline" id="submita"><span>Send</span></button>
+									</div>
+								</fieldset>
+								
+								<fieldset class="c-contactform__thanks is-hidden" id="formThanks">
+									<h4>Thank you for mail!</h4>
+									
+									<p>
+										I'm thrilled to hear from you.<br> 
+										My inbox can’t wait to get your message,<br> 
+										so write to me any time you like.
+									</p>
+									
+									<p>
+										I will reply as soon as possible,<br>
+										Cheers!
+									</p>
+								</fieldset>
+							</form>
+							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		<div class="c-thing u-bg u-bg--bright js-fadeOut">
+			<div class="c-logo">
+				<a href="#" class="c-logo__img c-logo__img--black js-goto"></a>
+			</div>
+			
+			<div class="o-wrap">
+				<div class="o-section">
+					<header class="o-header">
+						<h3>One more thing...</h3>
+					</header>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="c-opinions u-bg u-bg--dark u-relative">
+			<div class="c-logo">
+				<a href="#" class="c-logo__img c-logo__img--white js-goto"></a>
+			</div>
+			
+			<div class="o-section u-spacebetween js-fullHeight">
+
+				<div class="c-opinions__content">
+					<div class="o-wrap">
+						<header class="o-header">
+							<h5 class="anim anim--see">See</h5>
+							<h3><span>What my Clients</span> talking about. </h3>
+						</header>
+					</div>
+					
+					<div class="swiper-container" id="opinions">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<blockquote>
+									<p>
+										cutme impressed us with their efficient and <br>
+										professional manner - an approach that not only <br>
+										inspired confidence, but generated the results we <br>
+										were looking for.
+									</p>
+									
+									<span>Ahane Kmiecik, Veritas Wave</span>
+								</blockquote>
+							</div>
+							
+							<div class="swiper-slide">
+								<blockquote>
+									<p>
+										I am impressed by the professionalism - the veracity,<br> 
+										timeliness, great contact and very high quality code. <br>
+										I can safely say that it is one of my best co-workers.
+									</p>
+									
+									<span>Marcin Kapiński, CEO Inbudo.pl</span>
+								</blockquote>
+							</div>
+							
+							<div class="swiper-slide">
+								<blockquote>
+									<p>
+										Very timely, conscientious and honest.<br> 
+										I recommend to work with cutme!
+									</p>
+									
+									<span>Jakub Zajdel, Consulting &amp; More</span>
+								</blockquote>
+							</div>
+							
+							<div class="swiper-slide">
+								<blockquote>
+									<p>
+										I like working with Bartosz, because I chop her<br> 
+										minimum words and the maximum of the particular.<br> 
+										Professional concrete. I recommend as graphics<br> 
+										and style to WordPress.
+									</p>
+									
+									<span>Adam Pioch, Toastmasters International</span>
+								</blockquote>
+							</div>
+							
+							<div class="swiper-slide">
+								<blockquote>
+									<p>
+										I ordered the cut from the graphics to the skin <br>
+										for the Wordpress platform. I got a working peel<br> 
+										in 3 days. I would definitely recommend<br> 
+										and definitely a job worth the price.
+									</p>
+									
+									<span>Paweł Jóźwik, traffictrends.pl</span>
+								</blockquote>
+							</div>
+							
+							<div class="swiper-slide">
+								<blockquote>
+									<p>
+										Very good contact with the ability to fine-tune<br> 
+										the details and valuable suggestions from your site. <br>
+										An additional advantage is also the affordability<br> 
+										and knowledge of the latest standards.<br> 
+										Full satisfaction. I would recommend.
+									</p>
+									
+									<span>Damian Zbrożek</span>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="o-wrap">
+					<div class="c-clients">
+					
+						<div class="c-clients__item">
+							<img src="img/clients/tt.png" alt="tt" width="300" height="80">
+						</div>
+						
+						<div class="c-clients__item">
+							<img src="img/clients/petra.png" alt="petra" width="300" height="80">
+						</div>
+						
+						<div class="c-clients__item">
+							<img src="img/clients/frogriot.png" alt="frogriot" width="300" height="80">
+						</div>
+						
+						<div class="c-clients__item">
+							<img src="img/clients/pragmatists.png" alt="pragmatists" width="300" height="80">
+						</div>						
+						
+						<div class="c-clients__item">
+							<img src="img/clients/trec.png" alt="trec" width="300" height="80">
+						</div>
+						
+						<div class="c-clients__item">
+							<img src="img/clients/consult.png" alt="consult" width="300" height="80">
+						</div>
+						
+						<div class="c-clients__item">
+							<img src="img/clients/projekt.png" alt="projekt" width="300" height="80">
+						</div>
+						
+						<div class="c-clients__item">
+							<img src="img/clients/roxx.png" alt="roxx" width="300" height="80">
+						</div>
+						
+						<div class="c-clients__item">
+							<img src="img/clients/extradom.png" alt="extradom" width="300" height="80">
+						</div>
+					</div>
+					
+				</div>
+			
+			</div>
+		</div>
+	
+	</div>
+
+	
+	<script src="js/libs.js"></script>
+	<script src="js/script.js"></script>
+
+
+</body>
+</html>

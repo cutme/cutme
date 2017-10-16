@@ -1,0 +1,35 @@
+// Fonts
+
+$icons:		'icomoon';
+$serif:		'Playfair Display', serif;
+$sans:		'sf-ui-display', sans-srif;
+
+$text:		$sans;
+
+
+// Font weights
+
+$light:				300;
+$regular:			400;
+
+
+
+
+$z-index: (
+	logo          : 100
+);
+
+
+// Default
+
+$base-font-size:	18;
+$base:				990;
+
+
+
+// RWD
+
+$tablet:				1024;
+$tablet_portrait:		768;
+$smartphone:			640;
+$smartphone_portrait:	480;

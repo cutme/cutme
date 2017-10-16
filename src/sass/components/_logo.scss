@@ -1,0 +1,37 @@
+.c-logo {
+	@include z-index(logo);
+	@extend %abs;
+	@extend %anim;
+	left: 30px; top: 0;
+	width: 145px;
+	height: 100%;
+	clip: rect(auto, auto, auto, auto);
+
+	&__img {
+		position: fixed;
+		left: 30px; top: 30px;
+		display: block;
+		width: 145px; height: 28px;
+		background: {
+			size: contain;
+			repeat: no-repeat;
+		}
+		
+		&--black {
+			background-image: url(../img/assets/logo-black.svg);
+		}
+		
+		&--white {
+			background-image: url(../img/assets/logo-white.svg);
+		}
+		
+		@media screen and ( max-width: $smartphone + px ) {
+			position: relative;
+			left: 0;
+		}
+	}
+	
+	.narrow-logo & {
+		width: 32px;		
+	}
+}
