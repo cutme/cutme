@@ -1,5 +1,25 @@
+/*
 .c-thing {
 	@extend %rel;
+	overflow: hidden;
+	
+	
+
+	&:before {
+		content: ' ';
+		position: fixed;
+		width: 100%; height: 100%;
+		top: 0; left: 0;
+		background-image: url(../img/bg/sheep.jpg);
+		background-size: cover;
+		will-change: transform; // creates a new paint layer
+	    z-index: -1;
+	    
+	    @media screen and ( max-width: $tablet + px ) {
+			background-position: center;
+	    }
+	    
+	}
 	
 	h3 {
 		@extend %font-serif;
@@ -7,9 +27,14 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		color: white;
 
 		@media screen and ( min-width: $tablet_portrait + 1px ) {
 			padding-bottom: 20px;
+		}
+		
+		@media screen and ( max-width: $smartphone + px ) {
+			font-size: rem(34);
 		}
 	}
 	
@@ -17,5 +42,7 @@
 		@media screen and ( max-width: $smartphone + px ) {
 			display: none;
 		}
+	
 	}
 }
+*/

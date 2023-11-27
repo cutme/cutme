@@ -20,8 +20,18 @@
 	@return ($target / $vw-context) * 1vw;
 }
 
+@function get-vw-1200($target) {
+	$vw-context: (1200 * 0.01);
+	@return ($target / $vw-context) * 1vw;
+}
+
 @function get-vw-1024($target) {
 	$vw-context: (1024 * 0.01);
+	@return ($target / $vw-context) * 1vw;
+}
+
+@function get-vw-smartphone($target) {
+	$vw-context: ($smartphone * 0.01);
 	@return ($target / $vw-context) * 1vw;
 }
 

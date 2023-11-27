@@ -1,8 +1,11 @@
 // Fonts
 
 $icons:		'icomoon';
-$serif:		'Playfair Display', serif;
-$sans:		'sf-ui-display', sans-srif;
+//$serif:		'Playfair Display', serif;
+//$sans:      'Helvetica Neue', sans-serif;
+//$sans:      BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+$sans:      'Roboto', sans-serif;
+$serif:     'Oswald';
 
 $text:		$sans;
 
@@ -11,25 +14,27 @@ $text:		$sans;
 
 $light:				300;
 $regular:			400;
-
-
+$bold:              500;
+$bold2:             700;
 
 
 $z-index: (
-	logo          : 100
+	logo          : 100,
+	nav           : 310,
+	navtrigger    : 320
 );
 
 
 // Default
 
-$base-font-size:	18;
-$base:				990;
+$base-font-size:	22;
+$base:				1200;
 
 
 
 // RWD
 
 $tablet:				1024;
-$tablet_portrait:		768;
+$tablet_portrait:		900;
 $smartphone:			640;
 $smartphone_portrait:	480;

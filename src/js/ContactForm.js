@@ -1,5 +1,15 @@
+import autosize from 'autosize';
+import serialize from 'form-serialize';
+import validate from 'validate.js';
+import InView from 'inview';
+
 (function() {
 	'use strict';
+	
+	const contact = document.getElementById('contact'),
+	      input = document.getElementById('input-0');
+
+	let status = false;
 		
 	var Form = ctme.Form = function () { };
 
@@ -21,9 +31,8 @@
 				spinner = document.getElementById('spinner'),
 				fields = document.getElementById('formFields'),
 				thanks = document.getElementById('formThanks');
-				
-			classie.remove( spinner, 'is-hidden' );
-			//classie.add( submit, 'is-hidden' );
+
+            spinner.classList.remove('is-hidden');
 
 			request.open('POST', action, true);
 			request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
@@ -33,21 +42,18 @@
 					var resp = request.responseText;
 
 					if (resp === 'Mail sent') {
-						classie.add( fields, 'is-hidden' );
-						classie.remove( thanks, 'is-hidden' );
-						classie.add( thanks, 'is-visible' );
+						fields.className += ' is-hidden';
+						thanks.classList.remove('is-hidden');
+						thanks.className += ' is-visible';
 					} else {
-						
-						classie.add( spinner, 'is-hidden' );
-						//classie.remove( submit, 'is-hidden' );
-						
+						spinner.className += 'is-hidden';
+						submita.classList.remove('is-hidden');						
 					}
 						
 				} else {
 				
-					classie.add( spinner, 'is-hidden' );
-				//	classie.remove( submit, 'is-hidden' );
-
+					spinner.className += ' is-hidden';
+					submita.classList.remove('is-hidden');
 					console.log('Status: ' + request.status);
 				
 				}
@@ -66,9 +72,7 @@
 			// These are the constraints used to validate the form
 			var constraints = {
 				email: {
-					// Email is required
 					presence: true,
-					// and must be an email (duh)
 					email: true
 				}
 			};
@@ -79,7 +83,7 @@
 
 			form.addEventListener("submit", function(ev) {
 				handleFormSubmit(form);
-				ev.returnValue = false;
+				ev.preventDefault() ? ev.preventDefault() : ev.preventDefault = false;
 			});
 
 
@@ -109,27 +113,12 @@
 	
 			// Updates the inputs with the validation errors
 			function showErrors(form, errors) {
-
-
 				var arr = form.querySelectorAll("input[name]");
 			
 				for (var i = 0; i < arr.length; i ++ ) {
 					var input = arr[i];
 					showErrorsForInput(input, errors && errors[input.name]);
 				}
-
-
-/*
-
-				form.querySelectorAll("input").forEach(function(post) { 
-					form.querySelectorAll("input").forEach(function(input) {
-						showErrorsForInput(input, errors && errors[input.name]);
-					});
-
-				});
-*/
-
-
 			}
 
 
@@ -192,15 +181,6 @@
 
 					el.parentNode.removeChild(el);
 				}
-				
-				/*
-	
-				formGroup.querySelectorAll(".help-block.error").forEach(function(post) {
-						formGroup.querySelectorAll(".help-block.error").forEach(function(el) {
-							el.parentNode.removeChild(el);
-						});
-				});
-*/
 			}
 
 
@@ -240,7 +220,7 @@
 			[].slice.call( document.querySelectorAll( '.input__field' ) ).forEach( function( inputEl ) {
 				// in case the input is already filled..
 				if( inputEl.value.trim() !== '' ) {
-					classie.add( inputEl.parentNode, 'input--filled' );
+					inputEl.parentNode.className += ' input--filled';
 				}
 
 				// events:
@@ -249,19 +229,57 @@
 			} );
 
 			function onInputFocus( ev ) {
-				classie.add( ev.target.parentNode, 'input--filled' );
+				ev.target.parentNode.className += ' input--filled';
 			}
 
 			function onInputBlur( ev ) {
 				if( ev.target.value.trim() === '' ) {
-					classie.remove( ev.target.parentNode, 'input--filled' );
+				    ev.target.parentNode.classList.remove('input--filled');
 				}
 			}
 		})();
+		
+		
+		
+		let inview = InView(contact, function(isInView) {
+        
+            if (isInView) {
+    
+                if (status === false) {
+                 
+                    if (input) {
+                		setTimeout(function() {
+                            input.focus({
+                                preventScroll: true
+                            });
+                		}, 1000);
+                    }
+    
+                    status = true;                    
+                }                
+                
+            } else {
+                
+                if (status === true) {
+
+                    status = false;
+                    
+                    if (input) {
+                        input.blur();
+                    }
+                    
+                    //console.log('stop contact');
+                }
+            }
+        });
+        
+
 	};
 		
 	ctme.Form = new Form();
 	ctme.Form.init();
+	
+	
 
 
 }(window.ctme = window.ctme || {}));

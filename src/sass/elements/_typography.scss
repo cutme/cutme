@@ -6,6 +6,7 @@ body {
 		family: $text;
 		size: #{$base-font-size}px;
 		weight: $light;
+		display: fallback;
 	}
 	color: $c-black;
 }
@@ -36,6 +37,6 @@ a {
 
 
 ::selection {
-	background-color: $c-red-1;
+	background-color: $c-blue1;
 	color: white;
 }

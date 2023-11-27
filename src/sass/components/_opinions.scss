@@ -1,98 +1,30 @@
 .c-opinions {
+    @extend %rel;
+    width: 100vw;
+    background-image: url(../img/bg/dark.jpg);
 
 	&__content {
-		@extend %font-serif;
-		width: 100%;
+	    width: 100%;
 		margin-bottom: 6rem;
+		text-align: center;
 		color: white;
 	}
-	
-	.swiper-wrapper {
-		@media screen and ( min-width: 1181px ) {
-			padding: 0 calc( (100% - 990px) / 2) ;
-		}
-		
-		@media screen and ( max-width: 1180px ) {
-			width: 100%;
-			
-		}
-	}
-	
-	.swiper-slide {
-		@media screen and ( max-width: 1180px ) {
-			padding: {
-				left: 95px;
-				right: 95px;
-			}
-		}
-		
-		@media screen and ( max-width: $smartphone + px ) {
-			padding: {
-				left: 30px;
-				right: 30px;
-			}
-		}
-	}
 
-	header {
-		@extend %rel;
-		margin-bottom: 3rem;
-	}
-	
-	h3 {
-		span {
-			@media screen and ( max-width: $tablet + px ) {
-				display: block;
-			}
-		}
-	}
-	
-	h5 {
-		@extend %abs;
-		left: 0; top: -.9rem;
-		font-size: rem(20);
-		transition-delay: 2s;
-		
-		@media screen and ( min-width: $tablet_portrait + 1px ) {
-			font-size: rem(30);
-		}
-		
-		@media screen and ( max-width: $tablet + px ) {
-			top: -2rem;
-		}
-		
-		@media screen and ( max-width: $tablet_portrait + px ) {
-			top: -1.7rem;
-		}
-	}
-	
 	blockquote {
+	    padding: 0 20px;
 		color: $c-gray2;
 		
 		p {
-			@extend %rel;
 			margin-bottom: 2rem;
 			line-height: 1.4;
-			font-size: rem(18);
 		
 			@media screen and ( min-width: $tablet + 1px ) {
 				font-size: rem(30);
-			}
-
-			@media screen and ( min-width: $smartphone + 1px ) and ( max-width: $tablet + px ) {
-				font-size: rem(24);
-			}
+			}	
 			
-			&:before {
-				@extend %abs;
-				display: block;
-				left: -14px;
-				content: '“';
-			}
-			
-			&:after {
-				content: '”';
-			}		
+			@media screen and ( max-width: $smartphone_portrait + px ) {
+    	        font-size: rem(18);
+    	    }
 		}
 		
 		span {
@@ -124,5 +56,10 @@
 		@media screen and ( max-width: $smartphone + px ) {
 			display: none;
 		}
+	}
+	
+	.o-header {
+		@extend %rel;
+		margin-bottom: 4rem;
 	}
 }

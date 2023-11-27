@@ -1,19 +1,13 @@
 .c-contact {
-	//@extend %rel;
-	@extend %font-serif;
-	color: white;
-
-	header {
-		margin-bottom: 3rem;
-	}
-
-	h2 {
-		font-size: rem(30);
+	@extend %rel; 
+	background-size: cover;
+	
+	@media ( min-width: $smartphone + 1px ) {
+		padding-bottom: 60px;
 	}
 
 	&__content {
-		
-		@media screen and ( min-width: $base + 1px ) {
+		@media ( min-width: $base + 1px ) {
 			display: flex;
 			justify-content: space-between;
 		}
@@ -26,7 +20,9 @@
 		}
 		
 		li {
-			margin-bottom: .6rem;
+			@extend %flex;
+			@extend %flex-y;
+			margin-bottom: .8rem;
 			font-size: rem(26);
 			white-space: nowrap;
 			
@@ -35,52 +31,55 @@
 			}
 
 			i {
-				display: inline-block;
-				margin-right: 30px;
-				vertical-align: middle;				
+				margin-right: 20px;
+				width: 30px;
+				text-align: center;
 			}
 			
 			a {
-				@extend %anim--fast;
-
+			    @extend %anim--medium;
+				@extend %ulink;
+				padding: 0 10px;
+				
+				&:before, &:after {
+    				background-color: $c-blue1;
+    				height: 100%;
+    				z-index: -1;
+				}
+				
 				&:hover {
-					color: $c-red-1;
+    				color: white;
 				}
 			}
 		}
 	}
 	
 	.icon-envelope-o {
-		font-size: rem(32);
-		
-		@media screen and ( max-width: $smartphone_portrait + px ) {
-			font-size: rem(26);
-		}
+		font-size: rem(26);
 	}
 	
-	.icon-twitter {
-		font-size: rem(36);
-		
-		@media screen and ( max-width: $smartphone_portrait + px ) {
-			font-size: rem(30);
-		}
+	.icon-messenger {
+		font-size: rem(26);
 	}
 	
 	.icon-device-mobile {
-		font-size: rem(38);
-		
-		@media screen and ( max-width: $smartphone_portrait + px ) {
-			font-size: rem(30);
-		}
-		
-		&:before {
-			margin-left: 2px;
-		}
+		font-size: rem(30);
 	}
 	
 	.c-logo {
 		@media screen and ( max-width: $smartphone + px ) {
 			display: none;
 		}
+	}
+	
+	.o-btn {
+    	&:before {
+//        	opacity: 1;
+        	border-color: $c-black;
+        }
+	}
+	
+	.o-header {
+		margin-bottom: 3rem;
 	}
 }

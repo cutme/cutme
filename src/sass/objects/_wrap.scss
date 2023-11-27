@@ -4,19 +4,32 @@
 	width: $base + px;
 	margin: 0 auto;	
 	
-	@media screen and ( max-width: 1180px ) {
-		width: 100%;
-		padding: {
-			left: 95px;
-			right: 95px;
-		}
+	&--wide {
+	    width: 1140px;
 	}
 	
-	@media screen and ( max-width: $smartphone + px ) {
-		padding: {
-			left: 30px;
-			right: 30px;
-		}
-	}
+	&--normal {
 	
+    	@media ( max-width: $base + 200px ) {
+    		width: 100%;
+    		padding: {
+    			left: 100px;
+    			right: 100px;
+    		}
+    	}
+
+    	@media ( max-width: $smartphone + px ) {
+            padding: {
+    			left: 40px;
+    			right: 40px;
+    		}
+    	}
+
+    	@media ( max-width: $smartphone_portrait + px ) {
+            padding: {
+    			left: 20px;
+    			right: 20px;
+    		}
+    	}    	
+	}
 }

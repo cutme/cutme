@@ -3,14 +3,14 @@
 	opacity: 0;
 	
 	.c-portfolio & {
-		transform: translateY(100px);	
+		//transform: translateY(100px);	
 	}
 	
 	&.b-loaded {
 		opacity: 1;
 		
 		.c-portfolio & {
-			transform: translateY(0);	
+			//transform: translateY(0);	
 		}
 	}
 }

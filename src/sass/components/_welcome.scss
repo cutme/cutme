@@ -1,45 +1,42 @@
 .c-welcome {
-	@extend %flex;
-	@extend %rel;
-	align-items: center;
-	overflow: hidden;	
+    width: 100vw;
+
+    &__content {
+    	@extend %flex;
+    	@extend %flex-y;
+    	@extend %rel; 
+    	min-height: 100vh;
+    	z-index: 10;
+    	background-color: $c-gray3;
+    	overflow: hidden;
+    	background-image: linear-gradient(-25deg, $c-gray3 0%, lighten($c-gray3, 1%) 100%);
+	}
 	
-	@media screen and ( max-width: $smartphone + px ) {
-		padding: {
-			top: 80px;
-			bottom: 80px;
-		}
+	@media ( max-width: $smartphone + px ) {
+		text-align: center;
 	}
 
-	.pace-done & {
-		transition-delay: 2s;
-	}
 	
 	&__cube {
 		@extend %abs;
-		@extend %anim--medium;
 		z-index: 1;
-
-		top: 20%;
-		z-index: 1;
-		right: 0;
-		transform: translateX(100%);
-		flex: 0;
+		top: 20%; right: 0;
 		width: 400px;
-		height: 640px;
-		opacity: 0;
-		will-change: transform, opacity;
+		height: 640px;				
+		flex: 0;
+		backface-visibility: hidden;
 		
-		@media screen and ( min-width: $base + 1px ) {
+		@media ( min-width: $tablet + 1px ) {
 			right: calc( (100% - 990px) / 2 );
 		}
-
-		@media screen and ( min-width: $base + 1px ) and ( max-width: 1180px ) {
-			width: grid(400, 1180);
+		
+		@media ( max-width: $tablet_portrait + px ) {
+            display: none;
 		}
 
 		&:after {
 			@extend %abs-after;
+			@extend %abs-y;
 			left: 50%; top: 0;
 			z-index: -1;
 			transform: translateX(-50%);
@@ -49,77 +46,137 @@
 				image: url(../img/assets/cube-shadow.png);
 				repeat: no-repeat;
 			}
-
-			@media screen and ( max-width: 1180px ) {
-				width: grid(850, 400);
-			}
 		}
 
-		&.is-loaded {
-			.pace-done & {
-				transition-delay: 300ms;
-				transform: translateX(0);
-				opacity: 1;
-				
-				@media screen and ( max-width: $base + px ) {
-					filter: grayscale(100%);
-					opacity: .1;
-				}
-			}
+		@media ( max-width: $tablet + px ) {
+            display: none;
 		}
 	}
 
 	article {
-		width: 560px;
-		margin-bottom: 3rem;
+		width: 500px;
+		margin-bottom: 4rem;
 
-		@media screen and ( min-width: $base + 1px ) and ( max-width: 1180px ) {
-			width: grid(560, 1180 - 95 - 95);
+		@media ( min-width: $base + 1px ) and ( max-width: 1180px ) {
+			width: grid(500, 1180 - 95 - 95);
 		}
 		
-		@media screen and ( max-width: $tablet_portrait + px ) {
+		@media ( max-width: $tablet_portrait + px ) {
 			width: 100%;
 		}
+		
+		a {
+            border-bottom: 1px dotted #333;
+            
+            &:hover{ border-bottom-color: $c-red;}
+    	}
 	}
 	
 	br {
-		@media screen and ( max-width: $smartphone + px ) {
+		@media ( max-width: $smartphone + px ) {
 			display: none;
 		}
 	}
 
-	h1, h3 {
-		@extend %font-serif;
-		line-height: 1.2;
-		font: {
-			weight: $regular;
-		}
-	}
-
-	h3 {
-		margin-bottom: 10px;
-		font-size: rem(52);
-		
-		@media screen and ( min-width: $smartphone + px ) {
-			font-size: rem(60);
-		}
+	h1, h2 {
+		line-height: 1.3;
 	}
 	
 	h1 {
+    	margin-bottom: 2rem;
+	    white-space: nowrap;
+	    letter-spacing: -1px;
+		text-transform: uppercase;
+        font-family: $serif;
+        font-size: rem(42);
 		
-		font-size: rem(24);
+        strong {
+            font-weight: $bold2;
+        }
+        
+		span {
+    		display: inline-block;
+            opacity: 0;
+		}
 		
-		@media screen and ( min-width: $smartphone + px ) {
-			font-size: rem(20);
+		@media ( min-width: $tablet_portrait + 1px ) {
+			font-size: rem(52);
+		}
+
+		@media ( max-width: $tablet_portrait + px ) {
+    		text-align: center;
+		}
+		
+		@media ( max-width: $smartphone + px ) {
+			font-size: rem(30);
 		}
 	}
 	
-	header {
-		margin-bottom: 2rem;;
+	h2 {
+		margin-bottom: 1.5em;
+		font-size: rem(26);
+		
+		@media ( max-width: $tablet_portrait + px ) {
+    		max-width: 97%;
+    		margin: 0 auto;
+    		text-align: center;
+		}
+
+		@media ( max-width: $smartphone + px ) {
+			font-size: rem(22);
+		}
+		
+		strong {
+    		font-weight: $bold;
+		}
 	}
-	
+
 	p {
 		margin-bottom: 1.5rem;
-		line-height: 1.5;
+		opacity: .9;
+		
+		@media ( max-width: $smartphone + px ) {
+			font-size: rem(16);
+		}
+	}
+	
+	&__skills {
+    	max-width: 560px;
+    	
+    	@media ( max-width: $tablet_portrait + px ) {
+    		margin: 0 auto;
+    		text-align: center;
+    		max-width: 97%;
+    	}
+
+    	strong {
+        	@extend %flex-xy;
+        	display: inline-flex;
+        	white-space: nowrap;
+        	border-radius: 30px;
+        	margin: 4px 0;
+        	border: 1.5px solid #666;
+        	padding: 6px 16px;
+        	letter-spacing: .5px;
+        	font: {
+        	    size: rem(12);
+        	    weight: 400;
+            }
+        	text: {
+        	    align: center;
+        	    transform: uppercase;
+            }
+        	
+        	@media ( max-width: $smartphone + px ) {
+            	padding: 6px 16px;
+        		font-size: rem(10);
+        	}
+    	}
+	}	
+	
+	.o-section {
+	    @media ( max-width: $smartphone + px ) {
+			padding-top: 100px;
+        }
 	}
 }
