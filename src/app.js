@@ -7,13 +7,13 @@ import css from './sass/style.scss';
 //tooltip();
 //typing();
 
-require('./js/anims.js');
-require('./js/blazy.js');
-require('./js/smoothscroll.js');
-require('./js/polyfills.js');
-require('./js/fonts.js');
-require('./js/init.js');
-require('./js/ContactForm.js');
-require('./js/Framework.js');
-require('./js/Carousel.js');
+require('./js/vue');
+require('./js/anims');
+require('./js/smoothscroll');
+//require('./js/polyfills');
+require('./js/fonts');
+require('./js/init');
+require('./js/ContactForm');
+//require('./js/Framework');
+require('./js/Carousel');
 

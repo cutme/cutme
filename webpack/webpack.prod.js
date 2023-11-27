@@ -15,7 +15,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 console.log(process.env.NODE_ENV);
 
 const templateFileMapper = [
-    { template: "./src/index.ejs", file: "index.html" },   
+    { template: "./src/index.ejs", file: "index.html" },  
+    { template: "./src/test.ejs", file: "test.html" }, 
 ]
 
 const htmlPlugins = () => {
@@ -65,6 +66,12 @@ module.exports = {
             loaders.js,
             loaders.ejs
         ]
+    },
+    
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.min.js'
+        }
     },
     
     plugins: htmlPlugins().concat([

@@ -52,6 +52,7 @@
         "smoothscroll-polyfill": "^0.4.4",
         "terser-webpack-plugin": "^2.3.4",
         "validate.js": "^0.13.1",
+        "vue": "^2.6.14",
         "webfontloader": "^1.6.28"
     },
     "browserslist": [

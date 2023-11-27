@@ -15,14 +15,10 @@ const minify = {
     removeScriptTypeAttributes: true,
 }
 
-
-
 const templateFileMapper = [
-
     { template: "./src/index.ejs", file: "index.html" },
-
+    { template: "./src/test.ejs", file: "test.html" },
 ]
-
 
 const htmlPlugins = () => {
   return templateFileMapper.map(entry => {
@@ -63,7 +59,11 @@ module.exports = {
 		]
     },
 
-   
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.min.js'
+        }
+    },
 
     plugins: htmlPlugins().concat([
         new ProgressBarPlugin(),
@@ -76,6 +76,8 @@ module.exports = {
         plugins.js,
         plugins.HotModuleReplacementPlugin
     ]),
+    
+    
 	
     optimization: {
         namedModules: true, // NamedModulesPlugin()
